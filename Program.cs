@@ -1,355 +1,182 @@
-﻿
-// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
+﻿/*
+// ==========================
+// EJERCICIO 1 - SUMA DE DOS NÚMEROS
+// ==========================
 
-// //Programacion estructurada
-// //ejemplo manejo de variables
+using System; // Importa funcionalidades básicas de C#
 
-// //sintaxis de variables
-// //tipoDatosAlmacenar nombreVariable = valor;
-// //tipos de datos primitivos
-// int edad = 30;
-// Console.WriteLine($"Edad: {edad}"); //entero
-// char inicial = 'J';
-// Console.WriteLine($"inicial: {inicial}"); //caracter
-// string nombre = "JUAN";
-// Console.WriteLine($"nombre: {nombre}"); //cadena de texto
-// //tipos de datos fecha
-// DateTime fechaNacimiento = new DateTime(1993, 5, 15); //fecha y hora
-// DateOnly fechaSolo = new DateOnly(2022, 10, 15); //solo fecha
-// //booleano
-// bool esEstudiante = true;
-// Console.WriteLine($"esEstudiante: {esEstudiante}"); //verdarero o falso
-// //tipos de datos numericos
-// double altura = 1.85;
-// Console.WriteLine($"altura: {altura}"); //en metros
-// decimal salario = 10000.00M;
-// Console.WriteLine($"Nombre: {nombre}, Inicial: {inicial}, Fecha de Nacimiento: {fechaNacimiento.ToShortDateString()}"); //en formato decimal para mayor precisión
-// double peso = 70.2;
-// Console.WriteLine($"peso: {peso}"); //en kilogramos
-// //tipos de datos complejos
+class Ejercicio1 // Define la clase Ejercicio1
+{
+    static void Main(string[] args) // Método principal de la aplicación
+    {
+        Console.WriteLine("Ingrese el primer número:"); // Solicita el primer número
+        int num1 = Convert.ToInt32(Console.ReadLine()); // Convierte el primer valor ingresado a entero
 
-// //operaciones de variables
-// int suma = edad + 5;//suma
-// Console.WriteLine($"Suma de Edad + 5: {suma}");
+        Console.WriteLine("Ingrese el segundo número:"); // Solicita el segundo número
+        int num2 = Convert.ToInt32(Console.ReadLine()); // Convierte el segundo valor ingresado a entero
 
-// //sumar dos enteros
-// int numero1 = 10;
-// int numero2 = 20;
-// int resultadoSuma = numero1 + numero2;
-// Console.WriteLine($"Resultado de la suma de {numero1} y {numero2}: {resultadoSuma}");
+        int suma = num1 + num2; // Suma ambos números
+        Console.WriteLine($"La suma es: {suma}"); // Muestra el resultado
+    }
+}
+*/
 
-// //ejemplo sumar dos numeros
-// Console.WriteLine("Numero Uno:");
-// int numeroA = Convert.ToInt32(Console.ReadLine()); //Conert para parsear un dato (conversion de tipo)
-// Console.Write("Numero Dos:");
-// int numeroB = int.Parse(Console.ReadLine()); //Parse para convertir un sttring a int
-// int resultadoSuma2 = numeroA + numeroB;
-// Console.WriteLine($"Resultado de la suma: {resultadoSuma2}");
+/*
+// ==========================
+// EJERCICIO 2 - PROMEDIO DE NOTAS
+// ==========================
 
+using System; // Importa funcionalidades básicas de C#
 
+class Ejercicio2 // Define la clase Ejercicio2
+{
+    static void Main(string[] args) // Método principal
+    {
+        Console.WriteLine("Ingrese la primera nota:");
+        double nota1 = Convert.ToDouble(Console.ReadLine()); // Lee y convierte la primera nota
 
-// //conversiones de tipos
-// string edadComoString = edad.ToString();
+        Console.WriteLine("Ingrese la segunda nota:");
+        double nota2 = Convert.ToDouble(Console.ReadLine()); // Lee y convierte la segunda nota
 
+        Console.WriteLine("Ingrese la tercera nota:");
+        double nota3 = Convert.ToDouble(Console.ReadLine()); // Lee y convierte la tercera nota
 
+        double promedio = (nota1 + nota2 + nota3) / 3; // Calcula el promedio
+        Console.WriteLine($"El promedio es: {promedio}"); // Muestra el resultado
+    }
+}
+*/
 
+/*
+// ==========================
+// EJERCICIO 3 - NÚMERO PAR O IMPAR
+// ==========================
 
-//EJERCICIO 1 CALCULO DE IMC
-// 1. Solicitar al usuario los siguientes datos: NombreCompleto, edad, estatura, peso
-// 2. Calcular el indice de masa corporal usando formula
+using System; // Importa funcionalidades básicas
 
-// EJERCICIO 2  CONVERSOR DE MONEDAS
-// 1. Solicitar al usuario el nombre y cantidad de pesos colombianos
-// 2. Calcular y mostrar el equivalente de esa cantidad en dolares, euros y libras esterlinas
-// 3. Mostrar la conversion con formato 
-
-//Hacer comentarios en el codigo para describir cada parte del codigo
-
-// EJERCICIO 1 CALCULO DE IMC
-// Console.WriteLine("Ingrese su nombre completo:");
-// string nombreCompleto = Console.ReadLine();
-// Console.WriteLine("Ingrese su edad:");
-// int edad = int.Parse(Console.ReadLine());
-// Console.WriteLine("Ingrese su estatura:");
-// double estatura = double.Parse(Console.ReadLine());
-// Console.WriteLine("Ingrese su peso:");
-// double peso = double.Parse(Console.ReadLine());
-
-// //  Calcular el indice de masa corporal (IMC)
-// double estaturaMetros = estatura / 100; // convertir cm a metros
-// double IMC = peso / (estaturaMetros * estaturaMetros); // IMC = peso / (estatura * estatura)
-// Console.WriteLine($"Hola {nombreCompleto}, tu IMC es: {IMC:F2}");
-
-// Console.WriteLine("Resumen");
-// Console.WriteLine($"Nombre: {nombreCompleto}");
-// Console.WriteLine($"Edad: {edad}");
-// Console.WriteLine($"Estatura: {estatura}");
-// Console.WriteLine($"Peso: {peso}");
-// Console.WriteLine($"IMC: {IMC:F2}");
-
-//EJERCICIO 2  CONVERSOR DE MONEDAS
-// Console.WriteLine("Ingrese el nombre:");
-// string nombre = Console.ReadLine();
-// Console.WriteLine("Ingrese la cantidad en pesos colombianos:");
-// double cantidad = double.Parse(Console.ReadLine());
-// double dolares = cantidad / 4000; // 1 USD ≈ 4000 COP
-// double euros = cantidad / 4300; // 1 EUR ≈ 4300 COP
-// double libras = cantidad / 5000; // 1 GBP ≈ 5000 COP
-
-// Console.WriteLine($"El nombre es: {nombre}");
-// Console.WriteLine($"La cantidad en pesos colombianos es: {cantidad}");
-// Console.WriteLine($"La cantidad en dolares es: {dolares:F2}");
-// Console.WriteLine($"La cantidad en euros es: {euros:F2}");
-// Console.WriteLine($"La cantidad en libras esterlinas es: {libras:F2}");
-
-
-
-//Estructura de desicion de if simple
-
-// int EDAD = 18; // Definimos una variable de tipo entero
-// if (edad >= EDAD)
-// {
-//     Console.WriteLine("Eres mayor de edad");
-// }
-
-// //Estructura de desicion de if compuesta
-
-// if (edad >= EDAD)
-// {
-//     Console.WriteLine("Eres mayor de edad");
-// }
-// else
-// {
-//     Console.WriteLine("Eres menor de edad");
-// }
-
-// //Estructura de desicion anidada
-
-// if (edad >= EDAD)
-// {
-//     if ()
-//     { }
-//     else
-//     { }
-// }
-// else
-// {
-//     if ()
-//         if (estudiante)
-//         { }
-
-// }
-
-// Console.Write("Ingrese su nombre: ");
-//         string nombre = Console.ReadLine() ?? "";
-
-//         Console.Write("Ingrese la cantidad en pesos colombianos (COP): ");
-//         string inputCOP = Console.ReadLine();
-//         double cantidadCOP;
-
-//         if (!double.TryParse(inputCOP, out cantidadCOP) || cantidadCOP <= 0)
-//         {
-//             Console.WriteLine("Cantidad en COP no válida.");
-//             return;
-//         }
-
-//         double tasaUSD = 3900.0;
-//         double tasaEUR = 4200.0;
-//         double tasaGBP = 5000.0;
-
-//         double enUSD = cantidadCOP / tasaUSD;
-//         double enEUR = cantidadCOP / tasaEUR;
-//         double enGBP = cantidadCOP / tasaGBP;
-
-//         Console.WriteLine($"\nHola {nombre}, aquí está la conversión de {cantidadCOP:C0} COP:");
-//         Console.WriteLine($"Dólares (USD): {enUSD.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"))}");
-//         Console.WriteLine($"Euros (EUR): {enEUR.ToString("C2", CultureInfo.CreateSpecificCulture("fr-FR"))}");
-//         Console.WriteLine($"Libras Esterlinas (GBP): {enGBP.ToString("C2", CultureInfo.CreateSpecificCulture("en-GB"))}");
-
-
-// Console.Write("Ingrese su nombre completo: ");
-//         string nombre = Console.ReadLine() ?? "";
-
-//         Console.Write("Ingrese su edad: ");
-//         string inputEdad = Console.ReadLine();
-//         int edad;
-//         if (!int.TryParse(inputEdad, out edad))
-//         {
-//             Console.WriteLine("Edad no válida.");
-//             return;
-//         }
-
-//         Console.Write("Ingrese su estatura en metros (ej: 1,75): ");
-//         string inputEstatura = Console.ReadLine();
-//         double estatura;
-//         if (!double.TryParse(inputEstatura, out estatura) || estatura <= 0)
-//         {
-//             Console.WriteLine("Estatura no válida.");
-//             return;
-//         }
-
-//         Console.Write("Ingrese su peso en kilogramos (ej: 70): ");
-//         string inputPeso = Console.ReadLine();
-//         double peso;
-//         if (!double.TryParse(inputPeso, out peso) || peso <= 0)
-//         {
-//             Console.WriteLine("Peso no válido.");
-//             return;
-//         }
-
-//         double imc = peso / (estatura * estatura);
-
-//         Console.WriteLine($"\nResumen:");
-//         Console.WriteLine($"Nombre: {nombre}");
-//         Console.WriteLine($"Edad: {edad}");
-//         Console.WriteLine($"Estatura: {estatura} m");
-//         Console.WriteLine($"Peso: {peso} kg");
-//         Console.WriteLine($"Su índice de masa corporal (IMC) es: {imc:F2}");
-/*using System;
-
-class Program
+class Ejercicio3
 {
     static void Main(string[] args)
     {
-        // Saldo inicial
-        decimal saldo = 500000m;
+        Console.WriteLine("Ingrese un número:");
+        int numero = Convert.ToInt32(Console.ReadLine()); // Convierte a entero
 
-        Console.WriteLine("=== Cajero Automático ===");
-        Console.WriteLine("Seleccione una opción:");
-        Console.WriteLine("1. Consultar saldo");
-        Console.WriteLine("2. Retirar dinero");
-        Console.WriteLine("3. Salir");
-
-        // Leer la opción del usuario
-        int opcion = Convert.ToInt32(Console.ReadLine());
-
-        switch (opcion)
+        if (numero % 2 == 0) // Si el número es divisible entre 2
         {
-            case 1:
-                // Consultar saldo
-                Console.WriteLine($"Su saldo actual es: {saldo:C}");
-                break;
-
-            case 2:
-                // Retirar dinero
-                Console.WriteLine("Ingrese el monto a retirar:");
-                decimal monto = Convert.ToDecimal(Console.ReadLine());
-
-                if (monto <= 0)
-                {
-                    Console.WriteLine("El monto debe ser mayor a 0.");
-                }
-                else if (monto > saldo)
-                {
-                    Console.WriteLine("Saldo insuficiente.");
-                }
-                else
-                {
-                    saldo -= monto;
-                    Console.WriteLine($"Retiro exitoso. Su nuevo saldo es: {saldo:C}");
-                }
-                break;
-
-            case 3:
-                // Salir
-                Console.WriteLine("Gracias por usar el cajero. ¡Hasta luego!");
-                break;
-
-            default:
-                Console.WriteLine("Opción no válida.");
-                break;
+            Console.WriteLine("El número es par.");
         }
+        else
+        {
+            Console.WriteLine("El número es impar.");
+        }
+    }
+}
+*/
+
+/*
+// ==========================
+// EJERCICIO 4 - TABLA DE MULTIPLICAR
+// ==========================
+
+using System;
+
+class Ejercicio4
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese un número para ver su tabla de multiplicar:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= 10; i++) // Bucle de 1 a 10
+        {
+            Console.WriteLine($"{numero} x {i} = {numero * i}");
+        }
+    }
+}
+*/
+
+/*
+// ==========================
+// EJERCICIO 5 - CONVERSIÓN DE TEMPERATURA
+// ==========================
+
+using System;
+
+class Ejercicio5
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese la temperatura en grados Celsius:");
+        double celsius = Convert.ToDouble(Console.ReadLine());
+
+        double fahrenheit = (celsius * 9 / 5) + 32; // Fórmula de conversión
+        Console.WriteLine($"La temperatura en Fahrenheit es: {fahrenheit}");
+    }
+}
+*/
+
+/*
+// ==========================
+// EJERCICIO 6 - INVENTARIO DE TIENDA
+// ==========================
+
+using System;
+
+class InventarioTienda
+{
+    static void Main(string[] args)
+    {
+        string[] productos = { "Camisa", "Pantalón", "Zapatos", "Gorra" };
+        int[] stock = { 10, 5, 8, 12 };
+
+        Console.WriteLine("=== Inventario de Tienda ===");
+
+        for (int i = 0; i < productos.Length; i++)
+        {
+            Console.WriteLine($"{productos[i]} - Stock: {stock[i]} unidades");
+        }
+
+        Console.WriteLine("\nIngrese el número del producto para vender (0 a 3): ");
+        int indice = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ingrese la cantidad a vender: ");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        if (cantidad <= stock[indice])
+        {
+            stock[indice] -= cantidad;
+            Console.WriteLine($"Venta realizada. Nuevo stock de {productos[indice]}: {stock[indice]}");
+        }
+        else
+        {
+            Console.WriteLine("Stock insuficiente para realizar la venta.");
+        }
+    }
+}
+*/
+
+/*
+// ==========================
+// EJERCICIO 7 - ENCUESTA DE SATISFACCIÓN
+// ==========================
+
+using System;
+
+class EncuestaSatisfaccion
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("=== Encuesta de Satisfacción ===");
+
+        Console.WriteLine("En una escala de 1 a 5, ¿qué tan satisfecho está con el servicio recibido?");
+        int calificacion = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Por favor, escriba un comentario sobre el servicio:");
+        string comentario = Console.ReadLine();
+
+        Console.WriteLine("\nGracias por su opinión.");
+        Console.WriteLine($"Calificación otorgada: {calificacion}");
+        Console.WriteLine($"Comentario: {comentario}");
     }
 }*/
 
-//ciclos
-//ciclo for:
-/*for (int i = 0; i <= 6; i+=2)
-{
-    Console.WriteLine("Edad: ");
-    sbyte edad = sbyte.Parse(Console.ReadLine());
-    Console.WriteLine("Edad es: " + edad);
-}
-
-//Ciclo while: Para cuando no se sabe cuantas veces se va a repetir un bloque de codigo
-Console.WriteLine("Edad: ");
-    sbyte edad = sbyte.Parse(Console.ReadLine());
-    sbyte edad_parametro_centinela = 99;
-
-    while (edad != edad_parametro_centinela);
-    {
-        //cuando va hacer lo que se encuentra dentro del bloque de codigo
-        Console.WriteLine("puede ingresar");
-
-        Console.WriteLine("Edad: ");
-        edad = sbyte.Parse(Console.ReadLine());
-    }*/
-
-    // ciclo do while: Para cuando no se sabe cuantas veces se va a repetir un bloque de codigo,
-    /*sbyte edad_parametro_centinela = 99;
-    Console.WriteLine("Edad: ");
-    sbyte edad = sbyte.Parse(Console.ReadLine());
-    do
-    {
-        Console.WriteLine("Edad: ");
-         sbyte edad = sbyte.Parse(Console.ReadLine());
-    } while (edad != edad_parametro_centinela);*/
-    
-    //arrays - listas (string - numeros) - diccionarios
-    //array
-    /*string[] nombres = { "Ana", "Maria", "Jose", "Andres"};
-
-    foreach (var nombre in nombres)
-    {
-        Console.WriteLine(nombre);
-    }*/
-
-    //lista
-    /*list<string> nombres = new list<string>();
-
-    //llenar la lista
-    //nombres.Capacity; //caracteristicas, en programacion propiedad o atributo
-    // nombres.Add(); //acciones, en programacion metodos o funciones 
-    nombres.Add("Ana");
-    nombres.Add("Maria");
-    nombres.Add("Juan");
-    nombres.Add("Jose");
-
-    foreach (string nombre in nombres)
-    {
-       Console.WriteLine(nombre); 
-    }*/
-
-    //listas de numeros
-    /*List<int> anios = new List<int>();
-
-    anios.Add(2001);
-    anios.Add(2011);
-    anios.Add(2025);
-    anios.Add(2031);
-
-    foreach (int anios in anios)
-    {
-       Console.WriteLine(anios); 
-    }*/
-
-    //dicionario (sintaxis)
-    /* Dictionary<tipo dato key value> nombre_diccionario = new Dictionary<tipo dto key, value>()
-    {
-      {"key", "value"},
-      {"key", "value"},
-      {"key", "value"},
-    }; */
-
-    /*Dictionary<int, string> lista_productos = new Dictionary<int, string>()
-    {
-        {1, "Cebolla"},
-        {2, "Mango"},
-        {3, "Mamoncillos"},
-    };
-
-    foreach (var producto in lista_productos)
-    {
-        Console.WriteLine($"{producto.Key}. {producto.Value}");
-    }*/
