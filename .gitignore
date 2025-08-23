@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+
+# IDE / editor
+.vs/
+.vscode/
+.idea/
+
+# SO / cachés / logs
+.DS_Store
+*.log
+*.cache
+
+# NuGet / paquetes
+packages/
+*.nupkg
+
+# Archivos de usuario/solución
+*.user
+*.suo
+*.sln.docstates
